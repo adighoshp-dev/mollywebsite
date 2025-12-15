@@ -1303,81 +1303,146 @@ form label {
 
 <style>
 
+/* ================================
+   Modern Password Gate (GTCO)
+================================ */
+
 #password-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(35, 35, 35, 0.92);
   z-index: 99999;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(126, 211, 33, 0.12),
+      rgba(20, 20, 20, 0.92)
+    );
 
   font-family: "Open Sans", Arial, sans-serif;
 }
 
 .password-box {
-  background: #fff;
-  padding: 50px 45px;
-  max-width: 420px;
-  width: 90%;
+  width: 92%;
+  max-width: 440px;
 
-  border-radius: 6px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+
+  padding: 56px 48px;
+  border-radius: 18px;
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.35),
+    0 10px 20px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+  animation: gateFadeUp 0.7s ease-out both;
+}
+
+@keyframes gateFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .password-box h2 {
-  color: #000;
+  font-size: 28px;
   font-weight: 400;
-  font-size: 26px;
-  margin-bottom: 10px;
+  color: #111;
+  margin-bottom: 8px;
 }
 
 .password-box p {
   font-size: 16px;
-  color: #777;
-  margin-bottom: 30px;
+  color: #666;
+  margin-bottom: 34px;
 }
 
 .password-box input {
   width: 100%;
-  height: 55px;
+  height: 58px;
+
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0 15px;
-  margin-bottom: 20px;
-  box-shadow: none;
+  padding: 0 18px;
+
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
+}
+
+.password-box input::placeholder {
+  color: #aaa;
 }
 
 .password-box input:focus {
   outline: none;
   border-color: #7ED321;
+  box-shadow: 0 0 0 4px rgba(126, 211, 33, 0.18);
+  transform: translateY(-1px);
 }
 
 .password-box button {
   width: 100%;
-  height: 55px;
-  background: #7ED321;
-  color: #fff;
-  border: 2px solid #7ED321;
-  border-radius: 4px;
+  height: 58px;
+
+  margin-top: 22px;
+
+  background: linear-gradient(
+    135deg,
+    #7ED321,
+    #8bde2f
+  );
+
+  border: none;
+  border-radius: 14px;
+
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  color: #fff;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  box-shadow:
+    0 12px 24px rgba(126, 211, 33, 0.35);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.2s ease;
 }
 
 .password-box button:hover {
-  background: #8bde2f;
-  border-color: #8bde2f;
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 32px rgba(126, 211, 33, 0.45);
+}
+
+.password-box button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 8px 16px rgba(126, 211, 33, 0.3);
 }
 
 .password-error {
-  margin-top: 15px;
-  color: #d9534f;
+  margin-top: 16px;
   font-size: 14px;
+  color: #d9534f;
   display: none;
 }
 
@@ -1385,6 +1450,7 @@ form label {
 #page {
   display: none;
 }
+
 
 </style>
 
