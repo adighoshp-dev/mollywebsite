@@ -1301,8 +1301,7 @@ form label {
   color: #fff !important;
 }
 
-<style>
-
+/* PASSWORD GATE – HARD CENTERED */
 #password-overlay {
   position: fixed;
   inset: 0; /* top right bottom left = 0 */
@@ -1372,7 +1371,5 @@ form label {
   display: none;
 }
 
-
-</style>
 
 /*# sourceMappingURL=style.css.map */
