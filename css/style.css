@@ -1301,62 +1301,89 @@ form label {
   color: #fff !important;
 }
 
-<style>
-  #password-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #111;
-    color: #fff;
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+#password-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(35, 35, 35, 0.92);
+  z-index: 99999;
 
-  .password-box {
-    max-width: 400px;
-    width: 90%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-  .password-box h2 {
-    margin-bottom: 20px;
-    font-weight: 300;
-  }
+  font-family: "Open Sans", Arial, sans-serif;
+}
 
-  .password-box input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
+.password-box {
+  background: #fff;
+  padding: 50px 45px;
+  max-width: 420px;
+  width: 90%;
 
-  .password-box button {
-    width: 100%;
-    padding: 12px;
-    background: #7ED321;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+  border-radius: 6px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
 
-  .password-error {
-    color: #ff6b6b;
-    margin-top: 10px;
-    display: none;
-  }
+.password-box h2 {
+  color: #000;
+  font-weight: 400;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
 
-  #page {
-    display: none;
-  }
-</style>
+.password-box p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.password-box input {
+  width: 100%;
+  height: 55px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+.password-box input:focus {
+  outline: none;
+  border-color: #7ED321;
+}
+
+.password-box button {
+  width: 100%;
+  height: 55px;
+  background: #7ED321;
+  color: #fff;
+  border: 2px solid #7ED321;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.password-box button:hover {
+  background: #8bde2f;
+  border-color: #8bde2f;
+}
+
+.password-error {
+  margin-top: 15px;
+  color: #d9534f;
+  font-size: 14px;
+  display: none;
+}
+
+/* Hide site until unlocked */
+#page {
+  display: none;
+}
+
 
 
 /*# sourceMappingURL=style.css.map */
