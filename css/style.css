@@ -1301,5 +1301,62 @@ form label {
   color: #fff !important;
 }
 
+<style>
+  #password-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #111;
+    color: #fff;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .password-box {
+    max-width: 400px;
+    width: 90%;
+  }
+
+  .password-box h2 {
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .password-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .password-box button {
+    width: 100%;
+    padding: 12px;
+    background: #7ED321;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .password-error {
+    color: #ff6b6b;
+    margin-top: 10px;
+    display: none;
+  }
+
+  #page {
+    display: none;
+  }
+</style>
+
 
 /*# sourceMappingURL=style.css.map */
