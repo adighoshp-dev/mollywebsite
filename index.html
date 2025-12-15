@@ -221,5 +221,26 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/main.js"></script>
 
+	<script>
+  function checkPassword() {
+    const input = document.getElementById("password-input").value;
+    const error = document.getElementById("password-error");
+
+    if (input === "biodiversity") {
+      document.getElementById("password-overlay").style.display = "none";
+      document.getElementById("page").style.display = "block";
+    } else {
+      error.style.display = "block";
+    }
+  }
+
+  document.getElementById("password-input").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      checkPassword();
+    }
+  });
+</script>
+
+
 </body>
 </html>
