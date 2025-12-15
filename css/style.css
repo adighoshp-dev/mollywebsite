@@ -1302,66 +1302,48 @@ form label {
 }
 
 <style>
-/* ================================
-   PASSWORD GATE – HARD CENTERED
-   Immune to Bootstrap & GTCO
-================================ */
 
 #password-overlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-
-  transform: translate(-50%, -50%);
+  inset: 0; /* top right bottom left = 0 */
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-
   z-index: 99999;
+
+  display: grid;
+  place-items: center;
 }
 
-/* Centered card */
 .password-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
   background: #ffffff;
   padding: 40px;
-  width: 90%;
+  width: 100%;
   max-width: 420px;
-
-  border-radius: 18px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
   text-align: center;
 }
 
-/* Title */
 .password-box h2 {
   margin-bottom: 20px;
   font-weight: 600;
   color: #111;
 }
 
-/* Input */
 .password-box input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 14px;
   font-size: 16px;
   border-radius: 12px;
   border: 1px solid #ddd;
   margin-bottom: 15px;
   outline: none;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .password-box input:focus {
   border-color: #7ED321;
-  box-shadow: 0 0 0 3px rgba(126, 211, 33, 0.25);
+  box-shadow: 0 0 0 3px rgba(126,211,33,0.25);
 }
 
-/* Button */
 .password-box button {
   width: 100%;
   padding: 14px;
@@ -1369,34 +1351,28 @@ form label {
   border: none;
   color: #fff;
   font-size: 16px;
-  font-weight: 600;
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.password-box button:hover {
-  box-shadow: 0 12px 30px rgba(126, 211, 33, 0.45);
-}
-
 .password-box button:active {
   transform: scale(0.97);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
-/* Error message */
 .password-error {
   margin-top: 12px;
   color: #e74c3c;
   display: none;
-  font-size: 14px;
 }
 
 /* Hide site until unlocked */
 #page {
   display: none;
 }
-</style>
 
+
+</style>
 
 /*# sourceMappingURL=style.css.map */
