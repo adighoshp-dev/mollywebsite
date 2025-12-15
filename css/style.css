@@ -1301,6 +1301,8 @@ form label {
   color: #fff !important;
 }
 
+<style>
+
 #password-overlay {
   position: fixed;
   inset: 0;
@@ -1384,6 +1386,6 @@ form label {
   display: none;
 }
 
-
+</style>
 
 /*# sourceMappingURL=style.css.map */
